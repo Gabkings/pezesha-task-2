@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { PersonalComponent } from './personal.component';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [PersonalComponent],
   imports: [
     CommonModule
   ]
