@@ -1,1 +1,40 @@
-<p>personal works!</p>
+<form #personalForm="ngForm" class="editForm" novalidate>
+    <div class="tab-pane fade in active">
+        <h4 class="head text-center">{{title}}</h4>
+        <br/>
+        <div class='row'>
+            <div class='col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8'>
+                <div class="row">
+                    <div class='col-xs-12 col-sm-6'>
+                        <div class="form-group">
+                            <label class="control-label" for="firstName">First Name</label>  
+                            <input class="form-control input-md" #firstName="ngModel" required name="firstName" type="text" placeholder="First Name" [(ngModel)]="personal.firstName">   
+                            <div class="alert alert-danger" [hidden]="firstName.valid">First Name is required</div>
+                        </div>
+                    </div>
+                    <div class='col-xs-12 col-sm-6'>
+                        <div class="form-group">
+                            <label class="control-label" for="lastName">Last Name</label>  
+                            <input class="form-control input-md" #lastName="ngModel" required name="lastName" type="text" placeholder="Last Name" [(ngModel)]="personal.lastName">
+                            <div class="alert alert-danger" [hidden]="lastName.valid">Last Name is required</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="email">Email</label>
+                    <input class="form-control input-md" #email="ngModel" required pattern="^[^\s@]+@[^\s@]+\.[^\s@]{2,}$" name="email" type="text" placeholder="Email" [(ngModel)]="personal.email">
+                    <div class="alert alert-danger" [hidden]="email.valid">Email is required and must be valid</div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="phoneNumber">Phone Number</label>
+                    <input class="form-control input-md" #phoneNumber="ngModel" required pattern="/^[0-9]\d{9}$/" name="phoneNumber" type="text" placeholder="Phone Number" [(ngModel)]="personal.phoneNumber">
+                    <div class="alert alert-danger" [hidden]="phoneNumber.valid">Phone Number is required and must be valid</div>
+                </div>
+                    
+                <div class="form-group text-center">
+                    <button class="btn btn-success btn-outline-rounded btn-info" [disabled]="!personalForm.valid" (click)="goToNext(personalForm)"> Next <span style="margin-left:10px;" class="glyphicon glyphicon-arrow-right"></span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
