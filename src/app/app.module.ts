@@ -9,12 +9,15 @@ import { AppComponent } from './app.component';
 import { PersonalComponent } from './personal/personal.component';
 import { DocumentComponent } from './document/document.component';
 import { AppRoutingModule }   from './app-routing.module';
+import { SuccessComponent } from './success/success.component';
+
+
 
 
 
 @NgModule({
   declarations: [
-    AppComponent, NavbarComponent,PersonalComponent,CompanyComponent,DocumentComponent, ResultComponent
+    AppComponent, NavbarComponent,PersonalComponent,CompanyComponent,DocumentComponent, ResultComponent, SuccessComponent
   ],
   imports: [
     BrowserModule,

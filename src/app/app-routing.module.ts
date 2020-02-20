@@ -4,6 +4,8 @@ import { PersonalComponent } from './personal/personal.component';
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { DocumentComponent } from './document/document.component';
+import { SuccessComponent } from './success/success.component';
+
 
 export const routes: Routes = [
     //1st route
@@ -17,6 +19,8 @@ export const routes: Routes = [
     //5th route
     {path: '', redirectTo: '/personal', pathMatch: 'full'},
     //6th route
+    {path: 'success', component: SuccessComponent},
+    //7th route
     {path: '**', component:PersonalComponent}
 ];
 

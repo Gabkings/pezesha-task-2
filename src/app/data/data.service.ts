@@ -29,6 +29,7 @@ export class DataService {
     this.formData.firstName = data.firstName;
     this.formData.lastName = data.lastName;
     this.formData.email = data.email;
+    this.formData.phoneNumber = data.phoneNumber;
   }
 
 

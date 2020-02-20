@@ -27,7 +27,7 @@
                 </div>
                 <div class="form-group">
                     <label class="control-label" for="phoneNumber">Phone Number</label>
-                    <input class="form-control input-md" #phoneNumber="ngModel" required name="phoneNumber" type="text" placeholder="Phone Number" [(ngModel)]="personal.phoneNumber">
+                    <input class="form-control input-md" id="phoneNumber" #phoneNumber="ngModel" required name="phoneNumber" type="text" placeholder="Phone Number" [(ngModel)]="personal.phoneNumber">
                     <div class="alert alert-danger" [hidden]="phoneNumber.valid">Phone Number is required and must be valid</div>
                 </div>
                     

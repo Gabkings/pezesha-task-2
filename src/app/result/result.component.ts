@@ -1,7 +1,7 @@
 import { DataService } from './../data/data.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { FormData } from '../data/formData.model';
-
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -11,10 +11,12 @@ import { FormData } from '../data/formData.model';
 })
 export class ResultComponent implements OnInit {
 
+
+
   title = 'Thank you for staying tuned';
   @Input() formData : FormData;
   isFormValid : boolean = false;
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService, private router: Router) { }
 
   ngOnInit(): void {
     this.formData = this.dataService.getFormData();
@@ -23,9 +25,9 @@ export class ResultComponent implements OnInit {
   }
 
   submit(){
-    alert('Excellent Job!')
-    this.formData = this.dataService.resetFormData()
-    this.isFormValid = false;
+    //this.formData = this.dataService.resetFormData()
+    //this.isFormValid = false;
+    this.router.navigate(['/success']);
   }
 
 }
